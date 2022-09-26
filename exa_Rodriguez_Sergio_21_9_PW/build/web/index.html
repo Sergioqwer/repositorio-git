@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Tienda virtual de computo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--hOJAS DE ESTILO EN CASCADA CSS-->
+        <!--Bootstrap con fuentes -->
+        <link href="http://fonts.googleapis.com/css?family=Archivo+Narrow.400.600.700&display=swap" rel='stylesheet'>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap-grid.min.css">
+        <!--/Bootstrap-->
+        <style type="text/css">
+            *{
+                margin: 0px;
+                padding: 0pxx
+            }
+            @font-face{
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            body{
+                #home{
+                    background: url(imagenes/home.jpg) 50% 0 repeat fixed;
+                    min-height: 1000px;
+                }
+                
+                #about{
+                    background: url(imagenes/f3.jpg) 50% 0 repeat fixed;
+                    min-height: 1000px;
+                }
+                
+            }
+            
+            #home{
+                background: url(imagenes/f2.jpg) 1000% 0 repeat fixed;
+                    min-height: 1000px;
+                    height: 1000px;
+                    margin: 0px;
+                    width: 100%;
+                    max-width: 1920px;
+                    position: relative;
+            }
+            #home article{
+                height: 450px;
+                position: absolute;
+                text-align: center;
+                top: 150px;
+                width: 100%
+            }
+            
+            
+            #about{
+                background: url(imagenes/f3.jpg) 50% 0 repeat fixed;
+                    min-height: 1000px;
+                    height: 1000px;
+                    margin: 0px;
+                    width: 100%;
+                    max-width: 1920px;
+                    position: relative;
+                    -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+                    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            }
+            
+            #about article{
+                height: 458px;
+                position: absolute;
+                text-align: center;
+                top: 350px;
+                width: 100%;
+            }
+            
+        body{
+      font-family: 'Archivo Narrow', sans-serif;
+    }
+    a{
+      color: #262525;
+      text-decoration: none;
+    }
+    img{
+      max-width: 100%;
+    }
+    /*CSS aplica a toda la pagina */
+    
+         /*Propiedades de carrito */     
+    .carrito-total{
+      background: #FC304D;
+      cursor:  pointer;
+      padding: 5px 10px;
+      position: relative;
+    }
+    .bolsa{
+      position: absolute;
+      background: #f2f2f2;
+      display: none;
+      padding:  5px;
+      z-index:  9999;
+    }
+    /*Propiedades de carrito */
+    
+    /*Propiedades de simple cart */
+    .simpleCart_items{
+      width: 350px;
+    }
+    .simpleCart_shelfItem{
+      padding-top:  15px;
+      padding-bottom: 15px;
+    }
+    .item-image img{
+      height: auto;
+      width: 80px;
+    }
+    .item_image,
+    .item_Quantity,
+    .item_price{
+      margin-bottom: 15px;
+    }
+    .item_price{
+      font-size: 2em;
+    }
+    .item-remove a{
+      color: #EC2626;
+    }
+
+    .item_add{
+      border-radius: 21.5px;
+      border:  thin solid;
+      transition: .5s;
+      padding:  5px 10px;
+    }
+    .item_add:hover{
+      background: #41DA7B;
+      border:  thin solid #2DC466;
+      color: #fff;
+    }
+     /*Propiedades de simple cart */
+     
+     /*Propiedades de footer */
+    footer{
+      text-align: center;
+    }   
+    /*Propiedades de footer */
+    
+  </style>
+        <!--/hOJAS DE ESTILO EN CASCADA CSS-->
+    </head>
+    <body>
+        <!--Seccion Home-->
+        <section id="home" data-type="background" data-speed="10">
+            <!--Inicia container cabecera  carrito-->
+<div class="container well">
+     <div class="row">  <!--Inicia fila carrito-->
+      <div class="col-sm-9">
+        <!-- Titulo de tienda -->
+        <h2>Tienda virtual de computo</h2>
+      </div>
+      <div class="col-sm-3">
+        <!-- Carrito de compras y sus items -->
+        <div class='carrito'>
+          <p class="carrito-total">
+            <span class="simpleCart_quantity">0</span> item(s) <span class="simpleCart_total">$0.00</span>  <!--cantdad, venta carrito-->
+          </p>
+          <div class="bolsa">
+            <div class="simpleCart_items"></div>
+            <div class="opciones">
+              <a class="boton simpleCart_empty" href="javascript:void(0)">Vaciar carrito</a><!--ELIMINAR COMPRA-->
+              <a class="boton simpleCart_checkout" href="#"><h3>**Realizar compra aqui!!</h3><!--Envia a la forma de pago-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--Inicia fila carrito-->       
+</div>
+<!--//termina container cabecera carrito-->
+        
+        
+        <!-- inicia contener principal para catalogo de productos carrito-->
+        <div class="container">
+            <div class="row"><!--inicia fila 1-->
+                <div class="col-md-5 col-lg-3 simpleCart_shelfItem">
+
+                    <!-- Nombre del producto se obtiene al agregar la clase (item_name) -->
+                    <h2 class="item_name">Laptop 1</h2>
+                    <!-- Imagen del producto se obtiene al agregar la clase (item_image) -->
+                    <img class="item_image" src="imagenes/l3.png" alt="Auto Azul"/>
+                    <!-- Cantidad a requerir del producto se obtiene al agregar la clase (item_Quantity) -->
+                    <input class="item_Quantity" type="number" min="1" max="10" value="1"/>
+                    <!-- Precio del producto se obtiene al agregar la clase (item_price) -->
+                    <div class="item_price">$11000</div>
+                    <!-- Añadir el producto al carrito, se logra agregando la clase (item_add) -->
+                    <a class="item_add" href="javascript:;"> Añadir al carrito </a>
+
+                </div>
+
+                <div class="col-md-5 col-lg-3 simpleCart_shelfItem">
+                    <h2 class="item_name">Laptop 2</h2>
+
+                    <img class="item_image" src="imagenes/l4.jpg" alt="Auto Naranja"/>
+                    <input class="item_Quantity" type="number" min="1" max="10" value="1"/>
+                    <div class="item_price">$13000</div>
+                    <a class="item_add" href="javascript:;"> Añadir al carrito </a>
+
+                </div>
+                <div class="col-md-5 col-lg-3 simpleCart_shelfItem">
+
+                    <h2 class="item_name">Laptop 3</h2>
+                    <img class="item_image" src="imagenes/l1.jpg" alt="Auto Rojo"/>
+                    <input class="item_Quantity" type="number" min="1" max="10" value="1"/>
+                    <div class="item_price">$10000</div>
+                    <a class="item_add" href="javascript:;"> Añadir al carrito </a>
+
+                </div>
+                <div class="col-md-5 col-lg-3 simpleCart_shelfItem">
+
+                    <h2 class="item_name">Laptop 4</h2>
+                    <img class="item_image" src="imagenes/l2.jpg" alt="Auto Gris"/>
+                    <input class="item_Quantity" type="number" min="1" max="10" value="1"/>
+                    <div class="item_price">$15000</div>
+                    <a class="item_add" href="javascript:;"> Añadir al carrito </a>
+
+                </div>
+            </div><!--termina fila 1-->
+        </div>
+        <!-- inicia contener principal para catalogo de productos carrito-->
+        <!-- Agregamos la librería js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- Agregamos la librería Simple Cart (recuerda apuntar a la librería Simple Cart)-->
+        <script src="js/simpleCart.min.js"></script>     
+
+        <!--Funcion java script que realiza mecanismo de compra y pago-->  
+        <script>
+             $(document).ready(function($) {
+            /* Función jQuery para el evento clic en la etiqueta "x" con la clase (.carrito-total)*/
+            $('.carrito-total').click(function() {
+              //Mostrar los items del carrito
+              $('.bolsa').slideToggle();
+            });
+
+          });
+
+        //SIMPLE CART
+        //Configuraciones básicas, recuerda tu lo puedas adaptar a tu medida
+        simpleCart({
+          cartColumns: [
+              { view:'image' , attr:'image', label: "Imagen"}, //obtiene la imagen
+              { attr: "name", label: "Name"}, //obtiene el nombre
+              { view: "currency", attr: "price", label: "Price"},//obtiene el precio
+              { view: "decrement", label: "-"}, //Resta el producto
+              { attr: "quantity", label: "Qty"}, //obtiene la cantidad del producto
+              { view: "increment", label: "+"}, //Suma el producto
+              { view: "currency", attr: "total", label: "SubTotal" },// Obtiene el precio total del producto
+              { view: "remove", text: "Quitar", label: false} //Quita o remueve el producto
+          ],
+
+          cartStyle: "table", //puede ser div o table
+
+          checkout: { 
+              type: "PayPal" , //Pago a través de PayPal
+              email: "tu-correo@dominio.com" //tu correo válido
+          }
+
+        });
+        </script>
+        <!--/Funcion java script que realiza mecanismo de compra y pago--> 
+        </section>
+        <!--Seccion Home-->
+        
+        
+        <!--Seccion about-->
+        <section id="about" data-type="background" data-speed="10">
+            <h1> Seccion 2 </h1>
+            <section class="pages" id="about" data-type="background" data-apeed="10">
+                <article>
+                    <img src="imagenes/f3.jpg" width="650" height="400"/>
+                </article>
+            </section>
+        </section>
+        <!--Seccion about-->
+        
+
+    </body>
+</html>
